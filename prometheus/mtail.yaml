@@ -1,0 +1,5 @@
+- labels:
+    service: mtail
+    env: development
+  targets:
+    - host.docker.internal:3903

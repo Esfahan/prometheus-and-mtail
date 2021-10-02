@@ -1,0 +1,24 @@
+version: '3'
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    hostname: prometheus
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - metrics_data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yaml"
+      # For the sub dir like https://example.com/prometheus 
+      #- '--web.external-url=/prometheus'
+    ports:
+      - 9090:9090
+    #restart: always
+
+volumes:
+  metrics_data:
+    external: true
+  grafana_data:
+    external: true

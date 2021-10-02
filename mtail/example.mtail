@@ -1,0 +1,8 @@
+counter error_count
+
+/^.*ERROR.*$/ {
+  /^.*AAAA.*$/ {
+  } else {
+    error_count++
+  }
+}

@@ -1,0 +1,10 @@
+groups:
+  - name: ログ監視
+    rules:
+      - alert: logにERRORを含む文字列が書き込まれた場合
+        expr: rate(error_count[5m]) > 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          firing_text: "[{{ $labels.env }}] {{ $labels.instance }}\nlogにERRORを含む文字列が書き込まれました。"

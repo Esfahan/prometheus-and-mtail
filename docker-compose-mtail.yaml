@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mtail:
+    image: dylanmei/mtail
+    container_name: mtail
+    volumes:
+      - ./logs:/logs/
+      - ./mtail/:/mtail
+    ports:
+      - 3903:3903
+    entrypoint:
+           - mtail
+           -  --progs
+           -  /mtail/
+           -  --logs
+           -  /logs/example.log
