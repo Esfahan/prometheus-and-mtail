@@ -25,4 +25,4 @@ http://localhost:9090
 http://localhost:3903
 
 ## Related
-https://gist.github.com/Esfahan/86f56ee6a2178296be49ab3cb1a3018e
+[Possible to create the negative look ahead in mtail (golang) regular expressions.](https://gist.github.com/Esfahan/86f56ee6a2178296be49ab3cb1a3018e)
